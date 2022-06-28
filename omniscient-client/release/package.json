@@ -1,13 +1,17 @@
 {
-  "name": "backend",
+  "name": "omniscient-client-release",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "PORT=9000 node index.js"
+    "start": "PORT=9000 DATABASE_URL=file:./db.sqlite node index.js"
   },
   "dependencies": {
     "dotenv": "^16.0.1",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "@prisma/client": "4.0.0"
+  },
+  "devDependencies": {
+    "prisma": "^4.0.0"
   }
 }

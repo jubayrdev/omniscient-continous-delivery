@@ -5,6 +5,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
+const client_1 = require("@prisma/client");
+const prisma = new client_1.PrismaClient();
+prisma.user.count().then(console.log);
 const express_1 = __importDefault(require("express"));
 const routes_1 = __importDefault(require("./src/routes"));
 const app = (0, express_1.default)();

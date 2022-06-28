@@ -1,0 +1,22 @@
+{
+  "name": "omniscient-client",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^7.2.2"
+  },
+  "scripts": {
+    "backend": "npm run dev --prefix backend",
+    "frontend": "npm run start --prefix frontend",
+    "backend:build": "npm run build --prefix backend",
+    "frontend:build": "npm run build --prefix frontend",
+    "release:prismafication": "npm run prismafication --prefix release",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend frontend\"",
+    "build": "concurrently \"npm run backend:build\" \"npm run frontend:build\" && node ./build.js&&npm run release:prismafication",
+    "start": "PORT=9000 node ./release/index.js"
+  },
+  "dependencies": {
+    "fs-extra": "^10.1.0"
+  }
+}
